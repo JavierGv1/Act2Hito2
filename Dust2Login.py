@@ -42,5 +42,3 @@ driver.quit()
 
 print("Se obtuvieron ",LoginSuccess," inicios de sesion exitosos.")
 print("Se obtuvieron ",LoginUnsuccess," inicios de sesion fallidos.")
-
-print("Se lograron ",LoginSuccess," inicios de sesion exitosos.")
