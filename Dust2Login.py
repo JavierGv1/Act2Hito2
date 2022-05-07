@@ -1,7 +1,4 @@
-from distutils.log import Log
 from lib2to3.pgen2 import driver
-from time import sleep
-from xml.dom.minidom import Element
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -38,5 +35,7 @@ for i in range(0,len(lines),2):
     else:
         print("No se logro en login con: ",email)
         driver.get("https://www.facebook.com/")
-print("Se lograron ",LoginSuccess," inicios de sesion exitosos.")
+
 driver.quit()
+
+print("Se lograron ",LoginSuccess," inicios de sesion exitosos.")
