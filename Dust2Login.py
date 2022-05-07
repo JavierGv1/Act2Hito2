@@ -17,6 +17,7 @@ driver.maximize_window()
 driver.get("https://www.facebook.com/")
 
 LoginSuccess=0
+LoginUnsuccess=0
 for i in range(0,len(lines),2):
     email=lines[i]
     psw=lines[i+1]
@@ -36,7 +37,12 @@ for i in range(0,len(lines),2):
         driver.find_element(By.XPATH,"/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]/div/div/div/div/div/div/div/div/div[1]/div/div/div[1]/div[3]/div/div[4]/div/div[1]/div[2]/div/div/div/div/span").click()
 
     else:
+        LoginUnsuccess+=1
         print("No se logro en login con: ",email)
         driver.get("https://www.facebook.com/")
-print("Se lograron ",LoginSuccess," inicios de sesion exitosos.")
+
 driver.quit()
+
+print("Se obtuvieron ",LoginSuccess," inicios de sesion exitosos.")
+print("Se obtuvieron ",LoginUnsuccess," inicios de sesion fallidos.")
+
