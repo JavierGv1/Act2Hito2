@@ -21,13 +21,15 @@ for i in range(0,len(lines),2):
     psw=lines[i+1]
     driver.find_element(By.XPATH,"//*[@id='email']").send_keys(email)
     driver.find_element(By.XPATH,"//*[@id='pass']").send_keys(psw)
-    driver.find_element(By.XPATH,"//*[@id='u_0_d_BX']").click()
+    driver.find_element(By.NAME,"login").click()
+
     if driver.find_element(By.XPATH,"/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div/div[1]/div/div/div[1]/div/div/div[1]/ul/li/div/a"):
         LoginSuccess+=1
         print("Inicio de Sesion logrado con: ",email)
         driver.find_element(By.XPATH,"/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[1]/span/div/div[1]/svg").click()
         element = Wait5.until(EC.element_to_be_clickable((By.XPATH,"/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]/div/div/div/div/div/div/div/div/div[1]/div/div/div[1]/div[3]/div/div[4]/div/div[1]/div[2]/div/div/div/div/span")))
         driver.find_element(By.XPATH,"/html/body/div[1]/div/div[1]/div/div[2]/div[4]/div[2]/div/div[2]/div[1]/div[1]/div/div/div/div/div/div/div/div/div[1]/div/div/div[1]/div[3]/div/div[4]/div/div[1]/div[2]/div/div/div/div/span").click()
+
     else:
         print("F con: ",email)
 
