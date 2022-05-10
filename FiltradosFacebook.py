@@ -36,7 +36,8 @@ for i in range(0,len(lines),2):
     else:
         LoginUnsuccess+=1
         print("No se logro en login con: ",email)
-        driver.get("https://www.facebook.com/")
+        driver.find_element(By.XPATH,"//*[@id='email']").clear()
+        driver.find_element(By.XPATH,"//*[@id='pass']").clear()
 
 driver.quit()
 
